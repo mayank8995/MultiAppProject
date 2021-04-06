@@ -1,0 +1,23 @@
+<div class="main-container">
+    <section class="quiz-container" *ngIf="this.question">
+        <form *ngIf="!showResult" [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+            <p>{{this.question?.question | htmlDecode}}</p>
+            <ul  class="list">
+                <li>
+                    A. <input  type="radio" id="1" name="option1" formControlName="option1" value="{{this.question?.correct_answer}}"/> <label for="1"> {{this.question?.correct_answer | htmlDecode}}</label>
+                </li>
+                <li>
+                    B. <input  type="radio" id="2" name="option1" formControlName="option1" value="{{this.question?.incorrect_answers[0]}}"/> <label for="2"> {{this.question?.incorrect_answers[0] | htmlDecode}}</label>
+                </li>
+                <li>
+                    C. <input  type="radio" id="3" name="option1" formControlName="option1" value="{{this.question?.incorrect_answers[1]}}"/> <label for="3"> {{this.question?.incorrect_answers[1] | htmlDecode}}</label>
+                </li>
+                <li>
+                    D. <input  type="radio" id="4" name="option1" formControlName="option1" value="{{this.question?.incorrect_answers[2]}}"/> <label for="4"> {{this.question?.incorrect_answers[2] | htmlDecode}}</label>
+                </li>
+            </ul>
+            <button type="submit" [disabled]="!questionForm.valid">Submit</button>
+        </form>
+        <p *ngIf="showResult">{{correctAnswer+1}} out of {{totalQuestions}} answers are correct.</p>
+    </section>
+</div>

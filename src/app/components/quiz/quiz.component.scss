@@ -1,0 +1,17 @@
+
+.main-container{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.quiz-container{
+    background-color: #e4e6eb;
+    // border: 1px solid #c9d0cf;
+    padding: 10px;
+    box-shadow: 5px 10px #dee0e0;
+};
+.list{
+    list-style: none;
+}

@@ -9,13 +9,15 @@ import { BookSearchComponent } from './components/book-search/book-search.compon
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HtmlDecodePipe } from './pipes/html-decode.pipe';
 import { environment } from '../environments/environment';
+import { NotesappComponent } from './components/notesapp/notesapp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuizComponent,
     BookSearchComponent,
-    HtmlDecodePipe
+    HtmlDecodePipe,
+    NotesappComponent
   ],
   imports: [
     BrowserModule,

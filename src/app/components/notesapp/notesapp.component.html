@@ -1,0 +1,23 @@
+<main>
+    <!-- <div> -->
+        <section class="main-section">
+            <div class="heading">
+                <h1>Notes</h1>
+                <span class="icon" (click)="addTextArea()"><img src="../../../assets/icons/add_circle_outline_black_24dp.svg" alt="add"></span>
+            </div>
+            <!-- <div> -->
+                <form [formGroup]="notesForm">
+                <div class="content" *ngFor="let note of this.notesArray; trackBy:trackById"  [id]="note.id">
+                    <div class="header">
+                        <h4>{{note.date}}</h4>
+                        <span class="action-icon"><img src="../../../assets/icons/check_circle_outline_black_24dp.svg" alt="save"><img *ngIf="!(note.id === '0')" src="../../../assets/icons/delete_outline_black_24dp.svg" alt="delete" (click)="deleteNote(note.id)"><img src="../../../assets/icons/edit_black_24dp.svg" alt="edit" (click)="editNote(note.id)"></span>
+                    </div>
+                    <div class="text-area" >
+                            <textarea [readonly]="readonly" #content (focusout)="saveNote(note,content.value)" [formControlName]="note.id" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+            </form>
+            <!-- </div> -->
+        </section>
+    <!-- </div> -->
+</main>

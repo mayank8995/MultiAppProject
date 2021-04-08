@@ -1,6 +1,11 @@
 # Multiprojectapp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
+This project contains different small angular applications.
+![Screenshot (13)](https://user-images.githubusercontent.com/15875200/114016946-095d8f00-9889-11eb-96ab-2f9dde0b9e01.png)
+![Screenshot (10)](https://user-images.githubusercontent.com/15875200/114016952-0a8ebc00-9889-11eb-821e-5770ab62f362.png)
+![Screenshot (11)](https://user-images.githubusercontent.com/15875200/114016954-0b275280-9889-11eb-8f89-f45516457dc4.png)
+![Screenshot (12)](https://user-images.githubusercontent.com/15875200/114016957-0bbfe900-9889-11eb-99ce-8070b3f8eb04.png)
+
 
 ## Development server
 

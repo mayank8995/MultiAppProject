@@ -1,9 +1,15 @@
 
-<a href="#"  [routerLink]="['./',{ outlets: { notesapp: 'notes' } }]">Notes App</a><br>
-<a href="#" [routerLink]="['/quiz']" routerLinkActive="router-link-active" >Quiz App</a><br>
-<a href="#" [routerLink]="['./',{ outlets: { bookapp: 'book' } }]">Coming soon</a><br>
-<a href="#">Coming soon</a><br>
-<a href="#">Coming soon</a><br>
+<!-- <div>
+    <a href="#"  [routerLink]="['/notes']">Notes App</a><br>
+    <a href="#" [routerLink]="['/quiz']" routerLinkActive="router-link-active" >Quiz App</a><br>
+    <a href="#" [routerLink]="['/blog']">My Blog WIP</a><br>
+    <a href="#" [routerLink]="['/ticktactoe']">Tic Tac Toe Coming soon</a><br>
+    <a href="#">Coming soon</a><br>
+</div> -->
 <router-outlet name="notesapp"></router-outlet>
 <router-outlet name="bookapp"></router-outlet>
-<router-outlet></router-outlet>
+<router-outlet name="myblog"></router-outlet>
+<router-outlet name="crisscross"></router-outlet>
+<main class="layout">
+    <router-outlet (activate)='onActivate($event)'></router-outlet>
+</main>

@@ -1,0 +1,77 @@
+
+@import '/src/_fontcolors.scss';
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #bfb9b9;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px #bfb9b9;
+    background-color: #f1f1f1;
+    height:5vh;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    button {
+      background-color: inherit;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    //   padding: 5px 16px;
+      transition: 0.3s;
+  
+      &:hover {
+        background-color: #ddd;
+      }
+  
+      &.active {
+        background-color: #ccc;
+      }
+    }
+  }
+  /*Style*/
+  .site-wrapper{
+      height: 100vh;
+      margin-top: 85px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .site-main-section{
+        height: 100vh;
+        // margin-top: 85px;
+      }
+  }
+  .site-nav-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background: #1976d2;
+    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+    color:$w_color
+  }
+  /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 425px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+     /* For tablets: */
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+        /* For desktop: */
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

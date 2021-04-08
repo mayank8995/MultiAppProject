@@ -1,0 +1,24 @@
+.logo{
+    width:auto;
+    height:15vh;
+}
+.site-article-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid #bfb9b9;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px #bfb9b9;
+    .site-tech-logo{
+        padding-top: 5px;
+    }
+}
+.snippet{
+    text-align: center;
+    .content{
+        padding-bottom: 5px;
+    }
+}

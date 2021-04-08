@@ -9,4 +9,7 @@ export class AppComponent {
   title = 'MultiAppProject';
   constructor(){
   }
+  onActivate(event){
+    console.log("event>>",event);
+  }
 }

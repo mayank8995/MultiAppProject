@@ -10,6 +10,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HtmlDecodePipe } from './pipes/html-decode.pipe';
 import { environment } from '../environments/environment';
 import { NotesappComponent } from './components/notesapp/notesapp.component';
+import { TicTacToeComponent } from './components/tic-tac-toe/tic-tac-toe.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InmemorydataService } from './submodules/blog/services/inmemorydata.service';
 
 @NgModule({
   declarations: [
@@ -17,16 +21,25 @@ import { NotesappComponent } from './components/notesapp/notesapp.component';
     QuizComponent,
     BookSearchComponent,
     HtmlDecodePipe,
-    NotesappComponent
+    NotesappComponent,
+    TicTacToeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+  HttpClientInMemoryWebApiModule.forRoot(
+    InmemorydataService, { dataEncapsulation: false }
+)
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+function InMemoryDataService(InMemoryDataService: any, arg1: { dataEncapsulation: false; }): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
+  throw new Error('Function not implemented.');
+}
+

@@ -7,7 +7,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev:ssr": "ng run multiprojectapp:serve-ssr",
+    "serve:ssr": "node dist/multiprojectapp/server/main.js",
+    "build:ssr": "ng build --prod && ng run multiprojectapp:server:production",
+    "prerender": "ng run multiprojectapp:prerender"
   },
   "private": true,
   "dependencies": {
@@ -18,8 +22,11 @@
     "@angular/forms": "~11.2.8",
     "@angular/platform-browser": "~11.2.8",
     "@angular/platform-browser-dynamic": "~11.2.8",
+    "@angular/platform-server": "~11.2.8",
     "@angular/router": "~11.2.8",
+    "@nguniversal/express-engine": "^11.2.1",
     "angular-in-memory-web-api": "^0.11.0",
+    "express": "^4.15.2",
     "rxjs": "~6.6.7",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
@@ -29,6 +36,8 @@
     "@angular/cli": "~11.2.7",
     "@angular/compiler-cli": "~11.2.8",
     "@angular/language-service": "~11.2.8",
+    "@nguniversal/builders": "^11.2.1",
+    "@types/express": "^4.17.0",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",

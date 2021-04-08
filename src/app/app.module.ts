@@ -25,7 +25,7 @@ import { InmemorydataService } from './submodules/blog/services/inmemorydata.ser
     TicTacToeComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     RouterModule,
     ReactiveFormsModule,

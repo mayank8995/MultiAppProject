@@ -49,7 +49,9 @@ export class InmemorydataService  implements InMemoryDbService{
     const blog:BLOGDATA[]=[
       {
         id: '0',
-        content: `<p>JavaScript was initially created to “make web pages alive”.
+        content: `<p>
+        <h2>Origin and History</h2>
+        JavaScript was initially created to “make web pages alive”.
 
         The programs in this language are called scripts. They can be written right in a web page’s HTML and run automatically as the page loads.</p>
         
@@ -69,7 +71,21 @@ export class InmemorydataService  implements InMemoryDbService{
         V8 – in Chrome and Opera.
         SpiderMonkey – in Firefox.
         …There are other codenames like “Chakra” for IE, “ChakraCore” for Microsoft Edge, “Nitro” and “SquirrelFish” for Safari, etc.</p>
-        <p>The terms above are good to remember because they are used in developer articles on the internet. We’ll use them too. For instance, if “a feature X is supported by V8”, then it probably works in Chrome and Opera.</p>`,
+        <h2>Getting started with Javascript</h2>
+        <p>Getting started with JavaScript is easy: all you need is a modern Web browser. This guide includes some JavaScript features which are only currently available in the latest versions of Firefox, so using the most recent version of Firefox is recommended.</p>
+
+        <p>The Web Console tool built into Firefox is useful for experimenting with JavaScript; you can use it into two modes: single-line input mode, and multi-line input mode.</p>
+        <h2>Single-line input in the Web Console</h2>
+        <p>The Web Console shows you information about the currently loaded Web page, and also includes a JavaScript interpreter that you can use to execute JavaScript expressions in the current page.</p>
+
+        <p>To open the Web Console (Ctrl+Shift+I on Windows and Linux or Cmd-Option-K on Mac), open the Tools menu in Firefox, and select "Developer ▶ Web Console".</p> 
+        
+        <p>The Web Console appears at the bottom of the browser window. Along the bottom of the console is an input line that you can use to enter JavaScript, and the output appears in the panel above:</p>
+        <img style="width:100%;margin-bottom: 15px;" src="../../../../../assets/images/developer_console.png" alt="Developer console image">
+        <p>That's about javascript origin and history.</p>
+        <p>Thank you.</p>
+        <p>To learn more about javascript visit <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN Javascript</a></p>
+        `,
         externalLinks: [''],
         imageUrls: imageUrls,
         date: 'Thursday April 8,2021',

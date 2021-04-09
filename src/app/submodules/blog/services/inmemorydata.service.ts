@@ -9,34 +9,40 @@ import { BLOGDATA } from 'src/app/util/blog';
 })
 export class InmemorydataService  implements InMemoryDbService{
 
+  blog:BLOGDATA[]=[];
+  articles:ARTICLE[]=[
+    { 
+      id: '0',
+      imageUrl:'../../../../../assets/logo/JavaScript-logo.png',
+      alt:'Javascript Logo',
+      date:'Thursday April 8,2021',
+      heading:'Introduction to Javascript',
+      content:'Let’s see what’s so special about JavaScript...',
+      thumbsUpCount: 0
+    },
+    { 
+      id: '1',
+      imageUrl:'../../../../../assets/logo/Angular_full_color_logo.svg.png',
+      alt:'Angular Logo',
+      date:'Thursday April 8,2021',
+      heading:'Introduction to Angular',
+      content:'Let’s see what’s so special about Angular...',
+      thumbsUpCount: 0
+    },
+    { 
+      id: '2',
+      imageUrl:'../../../../../assets/logo/1280px-React-icon.svg.png',
+      alt:'React Logo',
+      date:'Thursday April 8,2021',
+      heading:'Introduction to React',
+      content:'Let’s see what’s so special about React...',
+      thumbsUpCount: 0
+    }
+  ];
   constructor() { }
   createDb(reqInfo?: RequestInfo): {} | Observable<{}> | Promise<{}> {
-    const articles:ARTICLE[] = [
-      { 
-        id: '0',
-        imageUrl:'../../../../../assets/logo/JavaScript-logo.png',
-        alt:'Javascript Logo',
-        date:'Thursday April 8,2021',
-        heading:'Introduction to Javascript',
-        content:'Let’s see what’s so special about JavaScript...'
-      },
-      { 
-        id: '1',
-        imageUrl:'../../../../../assets/logo/Angular_full_color_logo.svg.png',
-        alt:'Angular Logo',
-        date:'Thursday April 8,2021',
-        heading:'Introduction to Angular',
-        content:'Let’s see what’s so special about Angular...'
-      },
-      { 
-        id: '2',
-        imageUrl:'../../../../../assets/logo/1280px-React-icon.svg.png',
-        alt:'React Logo',
-        date:'Thursday April 8,2021',
-        heading:'Introduction to React',
-        content:'Let’s see what’s so special about React...'
-      }
-    ];
+    console.log("articles >>>",this.articles);
+    let articles = this.articles;
     return {articles};
   }
 
@@ -46,7 +52,7 @@ export class InmemorydataService  implements InMemoryDbService{
     imageUrls.push('../../../../../assets/logo/JavaScript-logo.png');
     imageUrls.push('../../../../../assets/logo/Angular_full_color_logo.svg.png');
     imageUrls.push('../../../../../assets/logo/1280px-React-icon.svg.png');
-    const blog:BLOGDATA[]=[
+    this.blog=[
       {
         id: '0',
         content: `<p>
@@ -80,16 +86,21 @@ export class InmemorydataService  implements InMemoryDbService{
 
         <p>To open the Web Console (Ctrl+Shift+I on Windows and Linux or Cmd-Option-K on Mac), open the Tools menu in Firefox, and select "Developer ▶ Web Console".</p> 
         
-        <p>The Web Console appears at the bottom of the browser window. Along the bottom of the console is an input line that you can use to enter JavaScript, and the output appears in the panel above:</p>
+        <p>The Web Console appears at the bottom of the browser window. Along the bottom of the console is an input line that you can use to enter JavaScript, and the output appears in the panel:</p>
         <img style="width:100%;margin-bottom: 15px;" src="../../../../../assets/images/developer_console.png" alt="Developer console image">
+        <p>Here is another codepen example:</p>
+        <iframe height="265" style="width: 100%;" scrolling="no" title="rNjYKNe" src="https://codepen.io/mayank8995/embed/preview/rNjYKNe?height=265&theme-id=dark&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+         See the Pen <a href='https://codepen.io/mayank8995/pen/rNjYKNe'>rNjYKNe</a> by Mayank Gupta
+             (<a href='https://codepen.io/mayank8995'>@mayank8995</a>) on <a href='https://codepen.io'>CodePen</a>.
+         </iframe>
         <p>That's about javascript origin and history.</p>
-        <p>Thank you.</p>
         <p>To learn more about javascript visit <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN Javascript</a></p>
         `,
         externalLinks: [''],
         imageUrls: imageUrls,
         date: 'Thursday April 8,2021',
-        heading: 'Introduction to Javascript'
+        heading: 'Introduction to Javascript',
+        thumbsUpCount: 0
       },
       {
         id: '1',
@@ -97,7 +108,8 @@ export class InmemorydataService  implements InMemoryDbService{
         externalLinks: [''],
         imageUrls: imageUrls,
         date: '',
-        heading: 'Introduction to Angular'
+        heading: 'Introduction to Angular',
+        thumbsUpCount: 0
       },
       {
         id: '2',
@@ -105,11 +117,38 @@ export class InmemorydataService  implements InMemoryDbService{
         externalLinks:[''],
         imageUrls: imageUrls,
         date: '',
-        heading: 'Introduction to React'
+        heading: 'Introduction to React',
+        thumbsUpCount: 0
       }
     ]
-    let obj = blog[index];
-    console.log(blog,"  ",obj);
+    let obj = this.blog[index];
+    console.log(this.blog,"  ",obj);
     return obj
   }
+
+  increaseThumbsUpCount(index: number){
+   
+    if(index!=null && index!=undefined){
+      this.articles[index].thumbsUpCount += 1;
+      console.log(index," ",this.articles[index]);
+      this.setLocalStorage(index);
+
+    }
+    //  console.log(index);
+  }
+  decreaseThumbsUpCount(index: number){
+    if(index!=null && index!=undefined){
+      if(this.articles[index].thumbsUpCount > 0){
+        this.articles[index].thumbsUpCount -= 1;
+        this.removeLocalStorage(index);
+      }
+    }
+  }
+  private setLocalStorage(index: number){
+    localStorage.setItem(index.toString(),this.articles[index].thumbsUpCount.toString());
+  }
+  private removeLocalStorage(index: number){
+    localStorage.removeItem(index.toString());
+  }
+ 
 }

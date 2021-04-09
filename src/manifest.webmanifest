@@ -1,0 +1,66 @@
+{
+  "name": "multiprojectapp",
+  "short_name": "multiprojectapp",
+  "theme_color": "#1976d2",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "assets/icons/add_circle_outline_black_24dp.svg",
+      "type": "image/svg",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/arrow_back_black_24dp.svg",
+      "type": "image/svg",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/check_circle_outline_black_24dp.svg",
+      "type": "image/svg",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/delete_outline_black_24dp.svg",
+      "type": "image/svg",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/edit_black_24dp.svg",
+      "type": "image/svg",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/thumb_up_black_24dp.svg",
+      "type": "image/svg",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/thumb_up_black_24dpcolored.svg",
+      "type": "image/svg",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/images/developer_console.png",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/logo/1280px-React-icon.svg.png",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/logo/Angular_full_color_logo.svg.png",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/logo/JavaScript-logo.png",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

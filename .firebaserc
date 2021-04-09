@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mayank-db": {
+      "hosting": {
+        "multiprojectapp": [
+          "mayank-db"
+        ]
+      }
+    }
+  }
+}

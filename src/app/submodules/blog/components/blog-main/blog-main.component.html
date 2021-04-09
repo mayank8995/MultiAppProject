@@ -10,8 +10,8 @@
         </header>
         <main class="site-main-section">
             <div class="tab">
-                <button class="tablinks font-size-2 font-weight-2" [routerLink]="['./article']" routerLinkActive="router-link-active" >Articles</button>
-                <button class="tablinks font-size-2 font-weight-2" [routerLink]="['./about']" routerLinkActive="router-link-active" >About</button>
+                <a role="button" class="tablinks font-size-2 font-weight-2" [routerLink]="['./article']" routerLinkActive="active-route" [routerLinkActiveOptions]="{exact:true}">Articles</a>&nbsp;&nbsp;
+                <a role="button" class="tablinks font-size-2 font-weight-2" [routerLink]="['./about']" routerLinkActive="active-route" [routerLinkActiveOptions]="{exact:true}">About</a>
             </div>
             <router-outlet></router-outlet>
         </main>

@@ -1,5 +1,8 @@
 <article>
     <div class="blog-wrapper">
+        <section class="back">
+            <img [routerLink]="['../article']"   role="button" src="../../../../../assets/icons/arrow_back_black_24dp.svg" alt="Back button">
+        </section>
         <section class="logo">
             <img [src]="this.blogData?.imageUrls[index]" alt="">
         </section>
@@ -8,13 +11,15 @@
             <h5>{{this.blogData?.date}}</h5>
         </header>
         <section class="blog-content">
-            <ng-template #name></ng-template>
             
-           <ng-container>
-                <div [innerHTML]="this.blogData?.content">
-
-                </div>
+            <ng-container *ngIf="this.blogData?.content?.changingThisBreaksApplicationSecurity;else first">
+                <div [innerHTML]="this.blogData?.content"></div>
+                <p>Thank you.</p>
+                <app-clap-component [blogId]="index"><span>If you like this article, please give it a thumbs up.</span></app-clap-component>
             </ng-container>
+            <ng-template #first>
+                <h1>Coming Soon</h1>
+            </ng-template>
         </section>
     </div>
 </article>

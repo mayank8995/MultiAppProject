@@ -28,6 +28,12 @@ body{
     position: relative;
     padding: 0 2vw;
 }
+a{
+    color: #1976d2;  
+}
+.active-route{
+    color:#551A8B;
+}
 /* For mobile phones: */
 [class*="col-"] {
     width: 100%;

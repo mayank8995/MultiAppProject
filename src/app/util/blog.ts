@@ -5,4 +5,5 @@ export interface BLOGDATA{
     imageUrls: string[];
     date: string;
     heading: string;
+    thumbsUpCount: number
 }

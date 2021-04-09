@@ -14,6 +14,7 @@ import { TicTacToeComponent } from './components/tic-tac-toe/tic-tac-toe.compone
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InmemorydataService } from './submodules/blog/services/inmemorydata.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,13 @@ import { InmemorydataService } from './submodules/blog/services/inmemorydata.ser
     HttpClientModule,
   HttpClientInMemoryWebApiModule.forRoot(
     InmemorydataService, { dataEncapsulation: false }
-)
+),
+  ServiceWorkerModule.register('ngsw-worker.js', {
+    enabled: environment.production,
+    // Register the ServiceWorker as soon as the app is stable
+    // or after 30 seconds (whichever comes first).
+    registrationStrategy: 'registerWhenStable:30000'
+  })
   ],
   providers: [],
   bootstrap: [AppComponent]

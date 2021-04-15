@@ -197,5 +197,8 @@
       }
     }
   },
-  "defaultProject": "multiprojectapp"
+  "defaultProject": "multiprojectapp",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

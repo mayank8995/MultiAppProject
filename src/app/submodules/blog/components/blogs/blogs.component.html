@@ -12,8 +12,8 @@
         </header>
         <section class="blog-content">
             
-            <ng-container *ngIf="this.blogData?.content?.changingThisBreaksApplicationSecurity;else first">
-                <div [innerHTML]="this.blogData?.content"></div>
+            <ng-container *ngIf="this.blogData?.content;else first">
+                <div [innerHTML]="this.blogData?.content | safe"></div>
                 <p>Thank you.</p>
                 <app-clap-component [blogId]="index"><span>If you like this article, please give it a thumbs up.</span></app-clap-component>
             </ng-container>

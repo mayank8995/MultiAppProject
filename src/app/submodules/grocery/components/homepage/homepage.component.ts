@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
+  loader: boolean = true;
+  data: any;
   constructor() { }
 
   ngOnInit(): void {
+
+    
   }
 
 }

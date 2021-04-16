@@ -21,6 +21,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { reducers ,metaReducers} from './reducers';
 import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SortingVisualizerComponent } from './components/sorting-visualizer/sorting-visualizer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BookSearchComponent,
     HtmlDecodePipe,
     NotesappComponent,
-    TicTacToeComponent
+    TicTacToeComponent,
+    SortingVisualizerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

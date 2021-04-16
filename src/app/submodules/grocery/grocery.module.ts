@@ -16,7 +16,7 @@ import * as fromGrocery from './reducers';
   imports: [
     CommonModule,
     GroceryRoutingModule,
-    StoreModule.forFeature(fromGrocery.groceryFeatureKey, fromGrocery.reducers, { metaReducers: fromGrocery.metaReducers })
+    StoreModule.forFeature(fromGrocery.groceryFeatureKey, fromGrocery.reducers)
   ]
 })
 export class GroceryModule { }

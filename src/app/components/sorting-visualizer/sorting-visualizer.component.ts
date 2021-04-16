@@ -11,15 +11,18 @@ export class SortingVisualizerComponent implements OnInit {
   array:any[]=[];
   selectedAlgorithm='bubble';
   animationArray:any[]=[];
+  speed: any;
   constructor() { }
 
   ngOnInit(): void {
     this.generateNewArray();
   }
   sortingSpeed(){
-    console.log("value>>",this.value);
+    // console.log("value>>",this.value);
     if(this.value < 10){
-      this.value = 10;
+      this.value = 10*2;
+    }else{
+      this.value *=2;
     }
     this.generateNewArray();
   }
@@ -40,6 +43,7 @@ export class SortingVisualizerComponent implements OnInit {
               3.5 : this.value < 100 ?
                 3 : this.value < 130 ?
                   2.5 : 2;
+    this.speed = numMargin*1000;
     const background = 'rgba(66, 134, 244, 0.8)';
     for(let i=0;i<this.value;i++){
       let number = this.generateRandomElements()*10;
@@ -48,10 +52,11 @@ export class SortingVisualizerComponent implements OnInit {
         number = 0;
       }else{
         width =  Math.floor(window.innerWidth / this.value * 3);
+        console.log("width>>>",width);
       }
       this.array.push({number,width,numMargin,background});
     }
-    console.log(this.array);
+    // console.log(this.array);
   }
   onSelectionChange(event){
     this.selectedAlgorithm = event.target.value;
@@ -73,12 +78,9 @@ export class SortingVisualizerComponent implements OnInit {
 
   private bubbleSort(){
     this.animationArray = this.animateBubbleSort(this.array);
-    // const arrayBars = document.getElementsByClassName('sorting-div');
-    // console.log("arrayBars>>>",arrayBars);
-    for(let i=0;i<this.animationArray.length;i++){
-      const {comparison, swap} = this.animationArray[i];
-      console.log(comparison,"  ",swap);
-    }
+    // for(let i=0;i<this.animationArray.length;i++){
+    //   const {comparison, swap} = this.animationArray[i];
+    // }
   }
   private animateBubbleSort(array):Array<any>{
     let newArray=[];
@@ -87,12 +89,21 @@ export class SortingVisualizerComponent implements OnInit {
         let obj:any = {};
         obj.comparison = [j,j+1];
         obj.swap = false;
-        if(array[j].number > array[j+1].number){
-          let temp = array[j].number;
-          array[j].number = array[j+1].number;
-          array[j+1].number = temp;
-          obj.swap = true;
-        }
+        setTimeout(() => {
+          if(array[j].number < array[j+1].number){
+            array[j].background = 'red';
+            array[j+1].background = 'red';
+            let temp = array[j].number;
+            array[j].number = array[j+1].number;
+            array[j+1].number = temp;
+            obj.swap = true;
+          }
+        }, i*this.speed);
+        setTimeout(() => {
+          array[j].background = 'rgba(66, 134, 244, 0.8)';
+          array[j+1].background = 'rgba(66, 134, 244, 0.8)';
+        }, (i+1)*this.speed);
+       
         newArray.push(obj);
       }
     }
@@ -102,11 +113,19 @@ export class SortingVisualizerComponent implements OnInit {
     for(let i = 0 ; i < this.array.length ;i++){
 
       for(let j=0;j<=i;j++){
-        if(this.array[i].number<this.array[j].number){
-          let temp = this.array[i].number;
-          this.array[i].number = this.array[j].number;
-          this.array[j].number = temp;
-        }
+        setTimeout(() => {
+          if(this.array[i].number<this.array[j].number){
+            this.array[i].background = 'red';
+            this.array[j].background = 'red';
+            let temp = this.array[i].number;
+            this.array[i].number = this.array[j].number;
+            this.array[j].number = temp;
+          }
+        }, i*this.speed);
+        setTimeout(() => {
+          this.array[i].background = 'rgba(66, 134, 244, 0.8)';
+          this.array[j].background = 'rgba(66, 134, 244, 0.8)';
+        }, (i+1)*this.speed);
       }
     }
   }

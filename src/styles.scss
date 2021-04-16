@@ -83,18 +83,18 @@ a{
         .col-11 {width: 91.66%;}
         .col-12 {width: 100%;}
         .layout{
-            padding: 0 15vw;
+            padding: 0 5vw;
         }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) { .layout{
     .layout{
-        padding: 0 15vw;
+        padding: 0 5vw;
     }
 }}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) { .layout{
-    padding: 0 15vw;
+    padding: 0 5vw;
 }}

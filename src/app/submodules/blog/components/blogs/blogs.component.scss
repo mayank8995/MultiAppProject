@@ -9,6 +9,22 @@ img{
 .heading, .logo{
     text-align: center;
 }
+.blog-content{
+    padding: 30px;
+}
+.back{
+    position:absolute;
+    img{
+        width:100%;
+        border: 1px solid grey;
+        height: auto;
+        border-radius: 50%;
+        cursor: pointer;
+        &:hover{
+            background: #e4e487;
+        }
+    }
+}
  /* Extra small devices (phones, 600px and down) */
  @media only screen and (max-width: 425px) {
 }

@@ -1,4 +1,4 @@
-    <article class="site-article-list" *ngFor="let article of articles;let i=index; trackBy:trackById" [id]="article?.id">
+    <article class="site-article-list" *ngFor="let article of $articles | async;let i=index; trackBy:trackById" [id]="article?.id">
         <div class="site-tech-logo">
             <img class="logo" [src]="article?.imageUrl" [alt]="article?.alt">
         </div>
@@ -14,6 +14,11 @@
                  <a class="font-size-1" href="javascript:void(0)" (click)="onArticleClick(article?.id)" >Continue reading</a>
             </section>
         </div>
+        <app-clap-component [blogId]="article?.id"></app-clap-component>
     </article>
+    <section>
+        <ng-template #name></ng-template>
+    </section>
+
 
 

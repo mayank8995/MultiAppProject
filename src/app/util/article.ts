@@ -4,5 +4,6 @@ export interface ARTICLE {
     alt: string;
     date: string,
     heading: string,
-    content: string
+    content: string,
+    thumbsUpCount: number
 }

@@ -14,6 +14,14 @@ import { TicTacToeComponent } from './components/tic-tac-toe/tic-tac-toe.compone
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InmemorydataService } from './submodules/blog/services/inmemorydata.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { reducers ,metaReducers} from './reducers';
+import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SortingVisualizerComponent } from './components/sorting-visualizer/sorting-visualizer.component';
 
 @NgModule({
   declarations: [
@@ -22,24 +30,41 @@ import { InmemorydataService } from './submodules/blog/services/inmemorydata.ser
     BookSearchComponent,
     HtmlDecodePipe,
     NotesappComponent,
-    TicTacToeComponent
+    TicTacToeComponent,
+    SortingVisualizerComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-  HttpClientInMemoryWebApiModule.forRoot(
-    InmemorydataService, { dataEncapsulation: false }
-)
+    BrowserAnimationsModule,
+  ServiceWorkerModule.register('ngsw-worker.js', {
+    enabled: environment.production,
+    // Register the ServiceWorker as soon as the app is stable
+    // or after 30 seconds (whichever comes first).
+    registrationStrategy: 'registerWhenStable:30000'
+  }),
+  StoreModule.forRoot(reducers, {
+    metaReducers,
+    runtimeChecks:
+    {
+    strictStateImmutability: true,
+    strictActionImmutability: true,
+    strictActionSerializability: true,
+    strictStateSerializability: true
+  }}),
+  StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot({
+      stateKey: 'router',
+      routerState: RouterState.Minimal}),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-function InMemoryDataService(InMemoryDataService: any, arg1: { dataEncapsulation: false; }): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
-  throw new Error('Function not implemented.');
-}
+
 

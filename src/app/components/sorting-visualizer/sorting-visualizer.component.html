@@ -1,0 +1,33 @@
+<section class="main-wrapper">
+    <section>
+        <header>
+            <div>
+                <button (click)="generateNewArray()">Generate random array</button>
+            </div>
+            <div>
+                <label for="vol">Change size</label>
+                <input #ref [(ngModel)]="value" type="range" id="vol" name="vol" min="0" max="100" (input)="changeArraySize()">
+            </div>
+            <div>
+                <select name="sorting-algorithms" id="sorting-algorithms" (change)="onSelectionChange($event)">
+                    <option selected value="algorithms">Algorithms</option>
+                    <option  value="bubble">Bubble Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                    <option value="selection">Selection Sort</option>
+                </select>
+            </div>
+        </header>
+    </section>
+    <section class="main-wrapper">
+        <div class="wrapper">
+            <div class="sort-wrapper">
+                <div class="sorting-div" [id] = "i" *ngFor="let elem of array;let i = index" [ngStyle]="{marginLeft:elem.numMargin+'px',height:elem.number+'px',background:elem.background,width:elem.width+'px'}">
+                    <ng-container *ngIf="ref.value <= 25 ">
+                        {{elem.number}}
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+

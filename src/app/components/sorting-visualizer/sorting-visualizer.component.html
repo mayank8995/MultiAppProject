@@ -5,8 +5,8 @@
                 <button (click)="generateNewArray()">Generate random array</button>
             </div>
             <div>
-                <label for="vol">Sorting speed</label>
-                <input #ref [(ngModel)]="value" type="range" id="vol" name="vol" min="0" max="100" (input)="sortingSpeed()">
+                <label for="vol">Change size</label>
+                <input #ref [(ngModel)]="value" type="range" id="vol" name="vol" min="0" max="100" (input)="changeArraySize()">
             </div>
             <div>
                 <select name="sorting-algorithms" id="sorting-algorithms" (change)="onSelectionChange($event)">

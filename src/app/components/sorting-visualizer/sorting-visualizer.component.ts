@@ -17,7 +17,7 @@ export class SortingVisualizerComponent implements OnInit {
   ngOnInit(): void {
     this.generateNewArray();
   }
-  sortingSpeed(){
+  changeArraySize(){
     // console.log("value>>",this.value);
     if(this.value < 10){
       this.value = 10*2;
@@ -62,7 +62,7 @@ export class SortingVisualizerComponent implements OnInit {
     this.selectedAlgorithm = event.target.value;
     switch(this.selectedAlgorithm){
       case 'bubble':
-        this.bubbleSort();
+        this.bubbleSort(this.array);
         // this.animateBubbleSort();
         break;
       case 'insertion':
@@ -76,56 +76,49 @@ export class SortingVisualizerComponent implements OnInit {
     }
   }
 
-  private bubbleSort(){
-    this.animationArray = this.animateBubbleSort(this.array);
-    // for(let i=0;i<this.animationArray.length;i++){
-    //   const {comparison, swap} = this.animationArray[i];
-    // }
-  }
-  private animateBubbleSort(array):Array<any>{
-    let newArray=[];
+  
+  private bubbleSort(array){
     for(let i=0;i< array.length-1;i++){
       for(let j=0;j<array.length-i-1;j++){
-        let obj:any = {};
-        obj.comparison = [j,j+1];
-        obj.swap = false;
         setTimeout(() => {
-          if(array[j].number < array[j+1].number){
+          if(array[j].number > array[j+1].number){
             array[j].background = 'red';
             array[j+1].background = 'red';
             let temp = array[j].number;
             array[j].number = array[j+1].number;
             array[j+1].number = temp;
-            obj.swap = true;
           }
-        }, i*this.speed);
+        }, i*10);
         setTimeout(() => {
           array[j].background = 'rgba(66, 134, 244, 0.8)';
           array[j+1].background = 'rgba(66, 134, 244, 0.8)';
-        }, (i+1)*this.speed);
-       
-        newArray.push(obj);
+        }, (i+1)*10);
+
       }
     }
-    return newArray;
   }
+
+  private updateArrayDiv(array,color,height){
+
+  } 
+
   private insertionSort(){
     for(let i = 0 ; i < this.array.length ;i++){
 
       for(let j=0;j<=i;j++){
         setTimeout(() => {
-          if(this.array[i].number<this.array[j].number){
+          if(this.array[i].number>this.array[j].number){
             this.array[i].background = 'red';
             this.array[j].background = 'red';
             let temp = this.array[i].number;
             this.array[i].number = this.array[j].number;
             this.array[j].number = temp;
           }
-        }, i*this.speed);
+        }, i*10);
         setTimeout(() => {
           this.array[i].background = 'rgba(66, 134, 244, 0.8)';
           this.array[j].background = 'rgba(66, 134, 244, 0.8)';
-        }, (i+1)*this.speed);
+        }, (i+1)*10);
       }
     }
   }

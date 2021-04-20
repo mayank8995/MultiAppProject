@@ -98,3 +98,5 @@ a{
 @media only screen and (min-width: 1200px) { .layout{
     padding: 0 5vw;
 }}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,6 +1,10 @@
 # Multiprojectapp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
+This project contains different small angular applications.
+![Screenshot (17)](https://user-images.githubusercontent.com/15875200/114071592-eb128600-98be-11eb-8e19-1a26751d521a.png)
+![Screenshot (10)](https://user-images.githubusercontent.com/15875200/114016952-0a8ebc00-9889-11eb-821e-5770ab62f362.png)
+![Screenshot (11)](https://user-images.githubusercontent.com/15875200/114016954-0b275280-9889-11eb-8f89-f45516457dc4.png)
+
 
 ## Development server
 
@@ -25,3 +29,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# Live Url (WIP) Blog
+https://mayank-db.web.app/blog/article
+
+# Live Url (Sorting visualizer) 
+https://mayank-db.web.app/sorting-visualizer
